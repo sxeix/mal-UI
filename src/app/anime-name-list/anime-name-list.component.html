@@ -1,0 +1,13 @@
+<div class="searchtools">
+    <button (click)="loadAnimeList()" class ="load">Load</button>
+</div>
+<div class="container">
+    <div class="gallery">
+        <li *ngFor="let anime of animeList">
+            <figure class="image">
+                <!-- <img class ="gallery_image_sub" src={{anime.image_url}} style="width:90px; height:126px;"> -->
+                <img class ="gallery_image_sub" src={{anime.image_url}} style="width:180px; height:252px;">
+            </figure>
+        </li>
+    </div>
+</div>
