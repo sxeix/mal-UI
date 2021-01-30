@@ -1,11 +1,12 @@
 <div class="searchtools">
+    <!-- the loadAnimeList() function is declared in anime-name-list-component.ts -->
     <button (click)="loadAnimeList()" class ="load">Load</button>
 </div>
 <div class="container">
     <div class="gallery">
+        <!-- the animeList variable is declared in anime-name-list-component.ts -->
         <li *ngFor="let anime of animeList">
             <figure class="image">
-                <!-- <img class ="gallery_image_sub" src={{anime.image_url}} style="width:90px; height:126px;"> -->
                 <img class ="gallery_image_sub" src={{anime.image_url}} style="width:180px; height:252px;">
             </figure>
         </li>

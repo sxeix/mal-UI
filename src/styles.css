@@ -1,6 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+    This file is good for setting global styles for the project, 
+    in this case I'm just using it to set the background
+*/
 html {
     background-color: #96D1F9;
     margin: 0px;
     padding: 0px;
-}
+    font-family: 'Open Sans', sans-serif;
+} 
