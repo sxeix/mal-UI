@@ -11,6 +11,8 @@ export class AnimeNameListComponent implements OnInit {
   // it is updated with loadAnimeList()
   animeList: JSON = null;
 
+  inputUsername: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,10 +20,10 @@ export class AnimeNameListComponent implements OnInit {
   
   // IMPORTANT: this method can only be ran once every 4 seconds otherwise you'll get blocked from the API
   // I assume they have this in place to avoid ddos and api abuse
-  async loadAnimeList(user = "sxeix") {
+  async loadAnimeList() {
     // this api call can be customised, the plan is to break this down 
     // like 'user' + user + '/' + listType + '/' + listTypeStatus (completed/dropped etc)
-    let response = await fetch('https://api.jikan.moe/v3/user/' + user + '/animelist/completed');
+    let response = await fetch('https://api.jikan.moe/v3/user/' + this.inputUsername + '/animelist/completed');
     let data = await response.json();
     // don't really know what stringify does ngl
     let jsonData = JSON.stringify(data);
@@ -29,6 +31,7 @@ export class AnimeNameListComponent implements OnInit {
     this.animeList = JSON.parse(jsonData).anime;
     // debugging purposes, look in developer tools console to see this every time load is clicked
     console.log(this.animeList);
+    this.inputUsername = "";
   }
 
 }
