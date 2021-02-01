@@ -12,6 +12,9 @@ export class AnimeNameListComponent implements OnInit {
   animeList: JSON = null;
 
   inputUsername: string = "";
+  
+  statusList = ["COMPLETED","MOST RECENT","ON HOLD", "WATCHING", "PLAN TO WATCH"];
+  sortByList = ["COMPLETED","TITLE"];
 
   constructor() { }
 

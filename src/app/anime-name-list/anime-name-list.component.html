@@ -2,6 +2,14 @@
     <!-- the loadAnimeList() function is declared in anime-name-list-component.ts -->
     <input [(ngModel)]="inputUsername" class="load" placeholder="Username"/>
     <button (click)="loadAnimeList()" class ="load">LOAD</button>
+    <app-anime-status-dropdown 
+        name="STATUS"
+        [list]="statusList"
+    ></app-anime-status-dropdown>
+    <app-anime-status-dropdown 
+        name="SORT BY"
+        [list]="sortByList"
+    ></app-anime-status-dropdown>
 </div>
 <div class="container">
     <div class="gallery">
