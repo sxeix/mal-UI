@@ -13,8 +13,8 @@ export class AnimeNameListComponent implements OnInit {
 
   inputUsername: string = "";
   
-  statusList = ["COMPLETED","MOST RECENT","ON HOLD", "WATCHING", "PLAN TO WATCH"];
-  sortByList = ["COMPLETED","TITLE"];
+  statusList = ["ALL","COMPLETED","ON HOLD", "WATCHING", "PLAN TO WATCH"];
+  sortByList = ["SCORE","TITLE"];
 
   constructor() { }
 
