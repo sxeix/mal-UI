@@ -1,0 +1,19 @@
+.dropdown {
+    display: inline-flex;
+    color:#FFFFFF;
+    text-align:center;
+    padding:3px 3em;
+    border:0.16em solid #FFFFFF;
+}
+.select {
+    width: auto;
+    height: 30px;
+    position: relative;
+    transform: translate3d(7px,5px,0);
+    background-color: transparent;
+}
+p {
+    vertical-align: top;
+    line-height: 10px;
+    position: relative;
+}
