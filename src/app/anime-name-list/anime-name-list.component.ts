@@ -11,12 +11,14 @@ export class AnimeNameListComponent implements OnInit {
   // it is updated with loadAnimeList()
   animeList: JSON = null;
 
+  //Listener variables that update depending on user's input
   inputUsername: string = "";
   selectedStatus: string = "";
   selectedSortBy: string = "";
   
-  statusList = ["ALL","COMPLETED","ON HOLD", "WATCHING", "PLAN TO WATCH"];
-  sortByList = ["SCORE","TITLE"];
+  // TODO: Strings for components, could probably do with their own file. JSON?
+  statusList = ["ALL","COMPLETED", "DROPPED", "ON HOLD", "WATCHING", "PLAN TO WATCH"];
+  sortByList = ["TITLE","SCORE"];
 
   constructor() { }
 
@@ -31,6 +33,12 @@ export class AnimeNameListComponent implements OnInit {
     this.selectedSortBy = sortBy;
   }
 
+  load(): void {
+    if (this.selectedSortBy == "" && this.selectedSortBy == "") return;
+    // TODO: need to convert the currently selected to correct format before running this, 
+    // at least must be done before calling fetch()
+    this.loadAnimeList();
+  }
   
   // IMPORTANT: this method can only be ran once every 4 seconds otherwise you'll get blocked from the API
   // I assume they have this in place to avoid ddos and api abuse
@@ -45,6 +53,7 @@ export class AnimeNameListComponent implements OnInit {
     this.animeList = JSON.parse(jsonData).anime;
     // debugging purposes, look in developer tools console to see this every time load is clicked
     console.log(this.animeList);
+    // TODO: resets username in input, need to store the 'current user' in a variable before wiping in future
     this.inputUsername = "";
   }
 

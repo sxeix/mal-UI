@@ -1,7 +1,7 @@
 <div class="searchtools">
     <!-- the loadAnimeList() function is declared in anime-name-list-component.ts -->
     <input [(ngModel)]="inputUsername" class="load" placeholder="Username"/>
-    <button (click)="loadAnimeList()" class ="load">LOAD</button>
+    <button (click)="load()" class ="load">LOAD</button>
     <app-anime-status-dropdown 
         name="STATUS"
         [list]="statusList"
