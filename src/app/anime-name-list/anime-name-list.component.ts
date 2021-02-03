@@ -12,6 +12,7 @@ export class AnimeNameListComponent implements OnInit {
   animeList: JSON = null;
 
   inputUsername: string = "";
+  selectedStatus: string = "completed";
   
   statusList = ["ALL","COMPLETED","ON HOLD", "WATCHING", "PLAN TO WATCH"];
   sortByList = ["SCORE","TITLE"];
@@ -20,13 +21,18 @@ export class AnimeNameListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  updateStatus(status: any) {
+    console.log(status);
+    this.selectedStatus = status;
+  }
   
   // IMPORTANT: this method can only be ran once every 4 seconds otherwise you'll get blocked from the API
   // I assume they have this in place to avoid ddos and api abuse
   async loadAnimeList() {
     // this api call can be customised, the plan is to break this down 
     // like 'user' + user + '/' + listType + '/' + listTypeStatus (completed/dropped etc)
-    let response = await fetch('https://api.jikan.moe/v3/user/' + this.inputUsername + '/animelist/completed');
+    let response = await fetch('https://api.jikan.moe/v3/user/' + this.inputUsername + '/animelist/' + this.selectedStatus);
     let data = await response.json();
     // don't really know what stringify does ngl
     let jsonData = JSON.stringify(data);

@@ -5,6 +5,7 @@
     <app-anime-status-dropdown 
         name="STATUS"
         [list]="statusList"
+        (selected)="updateStatus($event)"
     ></app-anime-status-dropdown>
     <app-anime-status-dropdown 
         name="SORT BY"

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-anime-status-dropdown',
@@ -9,10 +9,15 @@ export class AnimeStatusDropdownComponent implements OnInit {
 
   @Input() name: string;
   @Input() list: Array<string>;
-  selected = "null";
+  @Output() selected = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(status: any) {
+    console.log(status);
+    this.selected.emit(status);
   }
 
 }
