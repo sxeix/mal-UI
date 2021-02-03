@@ -15,8 +15,7 @@ export class AnimeStatusDropdownComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelected(status: any) {
-    console.log(status);
+  onSelected(status: any): void {
     this.selected.emit(status);
   }
 

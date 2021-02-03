@@ -9,7 +9,8 @@
     ></app-anime-status-dropdown>
     <app-anime-status-dropdown 
         name="SORT BY"
-        [list]="sortByList"
+        [list]="sortByList" 
+        (selected)="updateSortBy($event)"
     ></app-anime-status-dropdown>
 </div>
 <div class="container">

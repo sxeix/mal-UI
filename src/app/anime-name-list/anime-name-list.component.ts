@@ -12,7 +12,8 @@ export class AnimeNameListComponent implements OnInit {
   animeList: JSON = null;
 
   inputUsername: string = "";
-  selectedStatus: string = "completed";
+  selectedStatus: string = "";
+  selectedSortBy: string = "";
   
   statusList = ["ALL","COMPLETED","ON HOLD", "WATCHING", "PLAN TO WATCH"];
   sortByList = ["SCORE","TITLE"];
@@ -22,10 +23,14 @@ export class AnimeNameListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateStatus(status: any) {
-    console.log(status);
+  updateStatus(status: any): void {
     this.selectedStatus = status;
   }
+
+  updateSortBy(sortBy: any): void {
+    this.selectedSortBy = sortBy;
+  }
+
   
   // IMPORTANT: this method can only be ran once every 4 seconds otherwise you'll get blocked from the API
   // I assume they have this in place to avoid ddos and api abuse

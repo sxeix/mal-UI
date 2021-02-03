@@ -1,6 +1,5 @@
 <div class="dropdown">
     <p class="selectPara">{{name}}: </p>
-    <!-- <select [(ngModel)]="selected" id="{{name.toLowerCase()}}" (change)="onSelected()"class="select"> -->
     <select id="{{name.toLowerCase()}}" (change)="onSelected($event.target.value)" class="select">
         <option value="" disabled selected>Select {{name.toLowerCase()}}</option>
         <option *ngFor="let x of list" [value]="x">{{x}}</option>
