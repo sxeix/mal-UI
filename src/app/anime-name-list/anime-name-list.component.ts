@@ -11,7 +11,7 @@ export class AnimeNameListComponent implements OnInit {
   // it is updated with loadAnimeList()
   animeList: JSON = null;
 
-  //Listener variables that update depending on user's input
+  // Listener variables that update depending on user's input
   inputUsername: string = "";
   selectedStatus: string = "";
   selectedSortBy: string = "";
