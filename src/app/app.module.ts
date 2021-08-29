@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AnimeStatusDropdownComponent } from './anime-status-dropdown/anime-status-dropdown.component';
 import { HeaderComponent } from './header/header.component';
 import { TruncationPipe } from '../../libs/pipes/truncation.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TruncationPipe } from '../../libs/pipes/truncation.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

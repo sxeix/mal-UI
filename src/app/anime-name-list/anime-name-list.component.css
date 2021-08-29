@@ -27,7 +27,12 @@
 }
 
 .score {
-    font-size: large;
+    padding: 5px;
+    font-size: 25px;
+}
+.title {
+    padding: 5px;
+    font-size: 20px;
 }
 
 .details {
