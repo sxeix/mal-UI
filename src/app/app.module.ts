@@ -7,13 +7,15 @@ import { AnimeNameListComponent } from './anime-name-list/anime-name-list.compon
 import { FormsModule } from '@angular/forms';
 import { AnimeStatusDropdownComponent } from './anime-status-dropdown/anime-status-dropdown.component';
 import { HeaderComponent } from './header/header.component';
+import { TruncationPipe } from '../../libs/pipes/truncation.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeNameListComponent,
     AnimeStatusDropdownComponent,
-    HeaderComponent
+    HeaderComponent,
+    TruncationPipe
   ],
   imports: [
     BrowserModule,

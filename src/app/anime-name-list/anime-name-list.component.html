@@ -22,7 +22,7 @@
             </figure>
             <div class="details">
                 <p class="score">Score: {{anime.score}}</p>
-                <p>{{anime.title}}</p>
+                <p>{{anime.title | truncation:[40] }}</p>
             </div>
         </li>
     </div>
