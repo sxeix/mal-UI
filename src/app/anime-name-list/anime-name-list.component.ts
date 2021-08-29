@@ -14,8 +14,8 @@ export class AnimeNameListComponent implements OnInit {
   selectedSortBy: string = "";
   
   // TODO: Strings for components, could probably do with their own file. JSON?
-  statusList = ["ALL","COMPLETED", "DROPPED", "ON HOLD", "WATCHING", "PLAN TO WATCH"];
-  sortByList = ["TITLE","SCORE"];
+  statusList = ["All","Completed", "Dropped", "On hold", "Watching", "Plan to watch"];
+  sortByList = ["Title","Score"];
 
   constructor() { }
 
@@ -38,16 +38,16 @@ export class AnimeNameListComponent implements OnInit {
   }
   
   async loadAnimeList() {
-    let response = await fetch('https://api.jikan.moe/v3/user/' + this.inputUsername + '/animelist/' + this.selectedStatus);
+    let response = await fetch('https://api.jikan.moe/v3/user/' + this.inputUsername + '/animelist/' + this.selectedStatus.toUpperCase());
     let data = await response.json();
     let jsonData = JSON.stringify(data);
     // Need to handle case for when there is no anime
     let unsortedAnime = JSON.parse(jsonData).anime;
-    if (this.selectedSortBy === 'SCORE') {
+    if (this.selectedSortBy === 'Score') {
       this.animeList = unsortedAnime.sort(function(a, b){
         return b.score - a.score;
       });
-    } else if (this.selectedSortBy === 'TITLE') {
+    } else if (this.selectedSortBy === 'Title') {
       this.animeList = unsortedAnime.sort(function(a, b){
         return a.title - b.title;
       });

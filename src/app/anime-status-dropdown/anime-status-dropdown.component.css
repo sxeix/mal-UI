@@ -1,4 +1,4 @@
-.dropdown {
+/* .dropdown {
     display: inline-block;
     color:#FFFFFF;
     text-align:center;
@@ -6,7 +6,7 @@
     border:0.16em solid #FFFFFF;
     margin-right: 4px;
     height: 76%;
-}
+} */
 .select {
     width: auto;
     display: inline-block;
@@ -21,7 +21,7 @@
     text-transform: uppercase;
 }
 .select:hover{
-    color: #03DAC6;
+    color: #673AB7;
 }
 p {
     vertical-align: top;

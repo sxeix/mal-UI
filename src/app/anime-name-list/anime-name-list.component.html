@@ -1,17 +1,28 @@
 <div class="searchtools">
     <!-- the loadAnimeList() function is declared in anime-name-list-component.ts -->
-    <input [(ngModel)]="inputUsername" class="load" placeholder="Username"/>
-    <button (click)="load()" class ="load">LOAD</button>
-    <app-anime-status-dropdown 
-        name="STATUS"
-        [list]="statusList"
-        (selected)="updateStatus($event)"
-    ></app-anime-status-dropdown>
-    <app-anime-status-dropdown 
-        name="SORT BY"
-        [list]="sortByList" 
-        (selected)="updateSortBy($event)"
-    ></app-anime-status-dropdown>
+    <!-- <input [(ngModel)]="inputUsername" class="load" placeholder="Username"/> -->
+    <mat-form-field appearance="fill" class="menuItem">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter username" [(ngModel)]="inputUsername">
+      </mat-form-field>
+    <!-- <button (click)="load()" class ="load">LOAD</button> -->
+    <mat-form-field appearance="fill" class="dropdown menuItem">
+        <mat-label>Status</mat-label>
+        <mat-select [(value)]="selectedStatus">
+            <mat-option *ngFor="let x of statusList" [value]="x">
+                {{x}}
+            </mat-option>
+        </mat-select>   
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="dropdown menuItem">
+        <mat-label>Sort by</mat-label>
+        <mat-select [(value)]="selectedSortBy">
+            <mat-option *ngFor="let x of sortByList" [value]="x">
+                {{x}}
+            </mat-option>
+        </mat-select>   
+    </mat-form-field> 
+    <button class="button menuItem" mat-stroked-button (click)="load()">Load</button>
 </div>
 <div class="container">
     <div class="gallery">
@@ -22,7 +33,7 @@
             </figure>
             <div class="details">
                 <p class="score">Score: {{anime.score}}</p>
-                <p class="title" matTooltip="{{anime.title}}">{{anime.title | truncation:[40] }}</p>
+                <p class="title" matTooltip="{{anime.title}}">{{anime.title | truncation:[35] }}</p>
             </div>
         </li>
     </div>
