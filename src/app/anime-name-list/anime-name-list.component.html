@@ -1,7 +1,17 @@
 <div class="searchtools">
     <!-- the loadAnimeList() function is declared in anime-name-list-component.ts -->
     <input [(ngModel)]="inputUsername" class="load" placeholder="Username"/>
-    <button (click)="loadAnimeList()" class ="load">LOAD</button>
+    <button (click)="load()" class ="load">LOAD</button>
+    <app-anime-status-dropdown 
+        name="STATUS"
+        [list]="statusList"
+        (selected)="updateStatus($event)"
+    ></app-anime-status-dropdown>
+    <app-anime-status-dropdown 
+        name="SORT BY"
+        [list]="sortByList" 
+        (selected)="updateSortBy($event)"
+    ></app-anime-status-dropdown>
 </div>
 <div class="container">
     <div class="gallery">
@@ -10,6 +20,10 @@
             <figure class="image">
                 <img class ="gallery_image_sub" src={{anime.image_url}} style="width:180px; height:252px;">
             </figure>
+            <div class="details">
+                <p class="score">Score: {{anime.score}}</p>
+                <p>{{anime.title}}</p>
+            </div>
         </li>
     </div>
 </div>

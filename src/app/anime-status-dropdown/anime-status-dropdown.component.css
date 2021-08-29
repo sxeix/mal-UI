@@ -1,0 +1,31 @@
+.dropdown {
+    display: inline-block;
+    color:#FFFFFF;
+    text-align:center;
+    padding:3px 3em;
+    border:0.16em solid #FFFFFF;
+    margin-right: 4px;
+    height: 76%;
+}
+.select {
+    width: auto;
+    display: inline-block;
+    position: relative;
+    height: auto;
+    transform: translate3d(7px,5px,0);
+    background-color: transparent;
+    margin:0 0.3em 0.3em 0;
+    top: 3px;
+    color: white;
+    border: 0px;
+    text-transform: uppercase;
+}
+.select:hover{
+    color: #03DAC6;
+}
+p {
+    vertical-align: top;
+    line-height: 10px;
+    position: relative;
+    display: inline-block;
+}
