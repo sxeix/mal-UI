@@ -10,7 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import { TruncationPipe } from '../../libs/pipes/truncation.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button'; 
+import {MatInputModule} from '@angular/material/input'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

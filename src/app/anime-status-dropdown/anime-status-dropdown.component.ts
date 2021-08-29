@@ -10,6 +10,7 @@ export class AnimeStatusDropdownComponent implements OnInit {
   @Input() name: string;
   @Input() list: Array<string>;
   @Output() selected = new EventEmitter<any>();
+  
   constructor() { }
 
   ngOnInit(): void {
