@@ -1,8 +1,11 @@
-# Mymal
+# THIS PROJECT IS DEPRECATED, API NO LONGER SUPPORTS GETTING A USER'S ANIMELIST
+
+
+## Mymal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
-# Install and setup
+## Install and setup
 1. install nodejs latest version (15) (opt to install the c++/python stuff)
 2. open powershell and navigate to where you want the app stored
 3. then run command 'mkdir mymal'
